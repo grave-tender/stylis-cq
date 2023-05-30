@@ -384,14 +384,10 @@
 								 * second will become MEDIA, aka 109 'm'
 								 * otherwise second will become whatever was the first character
 								 */
-								//second = chars.charCodeAt(1) === CHARSET && chars.charCodeAt(3) === 110 ? MEDIA : chars.charCodeAt(1)
-								/*
-								issue is: this code, when it recieves anything with a 'c', it'll always spit out an 'm'
-								here it could be charset as well as container. See why this is written in the first place
-								*/
-
-								//lets use this original code instead, maybe using @charset will case a crash tho so uh stay safe
-								second = chars.charCodeAt(1)
+								
+								//h = 104, o = 111
+								let third = chars.charCodeAt(2);
+								second = chars.charCodeAt(1) === CHARSET && third === 104 ? MEDIA : chars.charCodeAt(1)
 
 								switch (second) {
 									case DOCUMENT:
@@ -512,13 +508,16 @@
 
 							first = chars.charCodeAt(0)
 							second = chars.charCodeAt(1)
+							let third = chars.charCodeAt(2)
 
 							switch (first) {
 								case NULL: {
 									break
 								}
 								case AT: {
-									if (second === IMPORT || second === CHARSET) {
+									//here checking if the at rule is different from container by checking if the third character in the at rule is different from 111 aka 'o'
+									//we want to avoid confusing charset and container and must behave differently
+									if ((second === IMPORT || second === CHARSET) && third !== 111) {
 										flat += chars + body.charAt(caret)
 										break
 									}

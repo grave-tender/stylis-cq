@@ -1,17 +1,13 @@
 {
-	"name": "stylis",
+	"name": "stylis-cq",
 	"main": "stylis.js",
 	"unpkg": "stylis.min.js",
 	"jsdelivr": "stylis.min.js",
 	"types": "stylis.d.ts",
-	"description": "light - weight css preprocessor",
-	"version": "3.5.4",
+	"description": "Copy of stylis@3.5.4 to support container queries",
+	"version": "0.1.0",
 	"homepage": "https://github.com/thysultan/stylis.js",
 	"license": "MIT",
-	"author": {
-		"name": "Sultan Tarimo",
-		"email": "sultantarimo@me.com"
-	},
 	"keywords": [
 		"css",
 		"preprocessor",
@@ -19,10 +15,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/thysultan/stylis.js"
-	},
-	"bugs": {
-		"url": "https://github.com/thysultan/stylis.js/issues"
+		"url": "https://github.com/grave-tender/styled-jsx-container"
 	},
 	"scripts": {
 		"test": "node ./tests",
