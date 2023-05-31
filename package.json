@@ -5,7 +5,7 @@
 	"jsdelivr": "stylis.min.js",
 	"types": "stylis.d.ts",
 	"description": "Copy of stylis@3.5.4 to support container queries",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"homepage": "https://github.com/thysultan/stylis.js",
 	"license": "MIT",
 	"keywords": [
